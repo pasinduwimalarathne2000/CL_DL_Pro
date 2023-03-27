@@ -1,0 +1,168 @@
+#icon{
+background-image:url(assets/images/Logo\ Group.png);
+position: absolute;
+width: 208px;
+height: 91px;
+left: 23px;
+top: 19px;
+}
+body{
+    /* font-family:; */
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+}
+.body{
+background-image: url(assets/images/Hero.png);
+position: absolute;
+width: 721px;
+height: 710px;
+left: 150px;
+top: 190px;
+display: flex;
+}
+#text{
+    position: absolute;
+    width: 113px;
+    height: 45px;
+    left: 1200px;
+    top: 70px;
+    font-size: 30px;
+    font-weight:900;
+}
+.btn{
+    position: absolute;
+    width: 389px;
+    height: 50px;
+    left: 1200px;
+    top: 547px;
+    background-color:#4D47C3;
+    color: white;
+    border-radius: 7px;
+    border-style: none;
+}
+#email{
+    position: absolute;
+    width: 369px;
+    height: 45px;
+    left: 1200px;
+    top: 136px;
+    background-color:#F0EFFF;
+    color: black;
+    border-radius: 7px;
+    padding-left: 10px;
+    border-style: none;
+    
+}
+
+#username{
+    position: absolute;
+    width: 369px;
+    height: 45px;
+    left: 1200px;
+    top: 216px;
+    background-color:#F0EFFF;
+    color: black;
+    border-radius: 7px;
+    padding-left: 10px;
+    border-style: none;
+}
+#number{
+    position: absolute;
+    width: 369px;
+    height: 45px;
+    left: 1200px;
+    top: 296px;
+    background-color:#F0EFFF;
+    color: black;
+    border-radius: 7px;
+    padding-left: 10px;
+    border-style: none;
+}
+#password{
+    position: absolute;
+    width: 369px;
+    height: 45px;
+    left: 1200px;
+    top: 376px;
+    background-color:#F0EFFF;
+    color: black;
+    border-radius: 7px;
+    padding-left: 10px;
+    border-style: none;
+}
+#cpassword{
+    position: absolute;
+    width: 369px;
+    height: 45px;
+    left: 1200px;
+    top: 457px;
+    background-color:#F0EFFF;
+    color: black;
+    border-radius: 7px;
+    padding-left: 10px;
+    border-style: none;
+}
+
+input[type="email"]::placeholder{
+    color: #A7A3FF; 
+}
+input[type="text"]::placeholder{
+    color: #A7A3FF; 
+}
+input[type="password"]::placeholder{
+    color: #A7A3FF; 
+}
+#cont{
+    position: absolute;
+    width: 369px;
+    height: 45px;
+    left: 1210px;
+    top: 645px;
+    background-color:#ffffff;
+    text-align: center;
+    color: #B5B5B5;
+}
+#f{
+    position: absolute;
+    width: 40px;
+    height: 45px;
+    left: 1315px;
+    top: 705px;
+    background-color:#ffffff;
+    background-image: url(assets/images/f.png);
+}
+#a{
+    position: absolute;
+    width: 40px;
+    height: 45px;
+    left: 1365px;
+    top: 705px;
+    background-color:#ffffff;
+    background-image: url(assets/images/a.png);
+}
+#g{
+    position: absolute;
+    width: 40px;
+    height: 45px;
+    left: 1415px;
+    top: 705px;
+    background-color:#ffffff;
+    background-image: url(assets/images/g.png);
+}
+#rsignin{
+    position: absolute;
+    width: 250px;
+    height: 45px;
+    left: 1250px;
+    top: 770px;
+    background-color:#ffffff;
+}
+#signin{
+    position: absolute;
+    width: 250px;
+    height: 45px;
+    left: 1460px;
+    top: 770px;
+    background-color:#ffffff;
+    font-weight: bold;
+}

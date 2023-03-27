@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <link rel="stylesheet" href="Signup.css">
+       <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+       </style> 
+       
+    </head>
+    <body>
+        <p id="icon"></p>
+        <div class="body"></div>
+        <div class="texts">
+        <div id="text">Sign Up</div>
+        <form id="form">
+        <div>
+            <input type="email" class="email" id="email" placeholder="Enter Email">
+        </div>
+        <div>
+            <input type="text" class="username" id="username" placeholder="Create Username">
+        </div>
+        <div>
+            <input type="text" class="number" id="number" placeholder="Contact number">
+        </div>
+        <div>
+            <input type="password" class="password" id="password" placeholder="Password">
+        </div>
+        <div>
+            <input type="password" class="cpassword" id="cpassword" placeholder="Confirm Password">
+        </div>
+        <button onclick="register()" type="submit" class="btn">Register</button>
+        </div>
+        <div id="cont">
+            or continue with
+        </div>
+        <div id="f"></div>
+        <div id="a"></div>
+        <div id="g"></div>
+        <div id="rsignin">
+            Already have an Account?
+        </div>
+        <div id="signin">
+            Sign in
+        </div>
+        </form>
+        
+    </body>
+
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js"></script>
+    <script src="signup.js"></script>
+</html>
