@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question Generation</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			line-height: 1.5;
+			margin: 0;
+			padding: 0;
+			background-color: #f2f2f2;
+		}
+		h1 {
+			font-size: 2.5rem;
+			text-align: center;
+			margin-top: 2rem;
+			margin-bottom: 1rem;
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 2rem;
+			margin-bottom: 2rem;
+		}
+		label {
+			font-weight: bold;
+			margin-bottom: 0.5rem;
+		}
+		textarea {
+			width: 80%;
+			height: 10rem;
+			resize: vertical;
+			padding: 0.5rem;
+			border-radius: 0.5rem;
+			border: 1px solid #ccc;
+			margin-bottom: 1rem;
+		}
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 0.5rem 1rem;
+			border-radius: 0.5rem;
+			border: none;
+			cursor: pointer;
+			transition: background-color 0.3s;
+		}
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+		#questions {
+			font-size: 1.2rem;
+			line-height: 1.8;
+			margin: 2rem;
+			padding: 1rem;
+			border-radius: 0.5rem;
+			border: 1px solid #ccc;
+			background-color: #fff;
+			box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+		}
+	</style>
+</head>
+<body>
+	<h1>Question Generation</h1>
+	<form action="{{ url_for('questions') }}" method="POST">
+		<label for="text">Enter text:</label><br>
+		<textarea id="text" name="text" rows="5" cols="50"></textarea><br>
+		<input type="submit" value="Generate Questions">
+	</form>
+	<div id="questions"></div>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('form').on('submit', function(event) {
+				event.preventDefault();
+				$.ajax({
+					data: $('form').serialize(),
+					type: 'POST',
+					url: '/questions',
+					success: function(response) {
+						$('#questions').html(response);
+					}
+				});
+			});
+		});
+	</script>
+</body>
+</html>
+
+
