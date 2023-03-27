@@ -1,9 +1,7 @@
-/* universal scroll behavior for the web site */
 html {
     scroll-behavior: smooth;
 }
 
-/* general styling for the body of the webpages throughout the website */
 body {
     box-sizing: border-box;
     margin: 0;
@@ -74,10 +72,6 @@ a {
     width: 369px;
     height: 62px;
 }
-
-/*
-select the first child of the input-container class
-*/
 
 .input-container:first-child {
     padding-top: 28px;
