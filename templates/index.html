@@ -12,10 +12,13 @@
       href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
     <style>
       /* Google Fonts - Poppins */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
       * {
         margin: 0;
@@ -119,91 +122,89 @@
         left: 260px;
         pointer-events: auto;
       }
-      .overlay-content{
-          background-color: red;
+      .overlay-content {
+        background-color: red;
       }
-      .content{
-          padding-top: 100px;
-          padding-left: 50px;
-          display: flex;
-          flex-direction: column;
-          justify-items: center;
-          align-items: center;
-          gap: 10px;
+      .content {
+        padding-top: 100px;
+        padding-left: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        gap: 10px;
       }
-      .content-heading{
-          font-size: 32px;
-          font-weight: 600;
-          color: #333;
-          margin-bottom: 20px;
+      .content-heading {
+        font-size: 32px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 20px;
       }
-      .content-para-input{
-          /* position: absolute;
+      .content-para-input {
+        /* position: absolute;
 
           left: 334px;
           top: 246px; */
-          width: 861px;
-          height: 198px;
-          outline: none;
-          box-shadow: none;
-          padding: 20px;
+        width: 861px;
+        height: 198px;
+        outline: none;
+        box-shadow: none;
+        padding: 20px;
 
-          background: #FFFFFF;
-          border: 1px solid #D0D0D0;
-          border-radius: 8px;
+        background: #ffffff;
+        border: 1px solid #d0d0d0;
+        border-radius: 8px;
       }
-      .content-question-input{
-          width: 861px;
-          height: 38px;
-          outline: none;
-          box-shadow: none;
-          padding: 20px;
+      .content-question-input {
+        width: 861px;
+        height: 38px;
+        outline: none;
+        box-shadow: none;
+        padding: 20px;
 
-
-          background: #FFFFFF;
-          border: 1px solid #D0D0D0;
-          border-radius: 8px;
+        background: #ffffff;
+        border: 1px solid #d0d0d0;
+        border-radius: 8px;
       }
-      .content-button{
-          width: 149px;
-          height: 58px;
-          background-color: #4D47C3;
-          border-radius: 8px;
-          border: none;
-          color: #fff;
+      .content-button {
+        width: 149px;
+        height: 58px;
+        background-color: #4d47c3;
+        border-radius: 8px;
+        border: none;
+        color: #fff;
       }
-      .content-form{
+      .content-form {
         display: flex;
         flex-direction: column;
         justify-items: center;
         align-items: center;
       }
-      .content-filesaver{
+      .content-filesaver {
         display: flex;
         flex-direction: row;
         justify-items: center;
         align-items: center;
-        gap:20px
+        gap: 20px;
       }
-      .content-filesaver-input{
+      .content-filesaver-input {
         width: 261px;
         height: 28px;
         outline: none;
         box-shadow: none;
         padding: 20px;
 
-
-        background: #FFFFFF;
-        border: 1px solid #D0D0D0;
+        background: #ffffff;
+        border: 1px solid #d0d0d0;
         border-radius: 8px;
       }
-      .content-filesaver-button{
-         width: 120px;
-          height: 38px;
-          background-color: #4D47C3;
-          border-radius: 8px;
-          border: none;
-          color: #fff;
+      .content-filesaver-button {
+        width: 120px;
+        height: 38px;
+        background-color: #4d47c3;
+        border-radius: 8px;
+        border: none;
+        color: #fff;
       }
     </style>
   </head>
@@ -222,12 +223,12 @@
         <div class="sidebar-content">
           <ul class="lists">
             <li class="list">
-              <a href="#" class="nav-link">
+              <a href="login.html" class="nav-link">
                 <span class="link">Login</span>
               </a>
             </li>
             <li class="list">
-              <a href="#" class="nav-link">
+              <a href="signup.html" class="nav-link">
                 <span class="link">SignUp</span>
               </a>
             </li>
@@ -236,7 +237,9 @@
           <div class="bottom-cotent">
             <li class="list">
               <a href="#" class="nav-link">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAATxJREFUSEvtldFxwjAQRB8VBCogJYQKAiVQAUkFoQPogFAB0AEdJKkgpAPoIOmA2Zkzo/EY62Sb6If7sbGFnnZvZfXIVL1MXO7gf3M+1eo+MANegCdb5QHYAjvg17vyFLBAmwBYZmgBr4Cu0fKCpfQbeLQZT8Cn3Y+Bod0fgZFHuRcsK2Wxag3MS5LegTd7JsvVitrygtW7B+ALkMKqkgPPpnbQBVigD5tIPZT6qpILK3sxCVpROdijWP0NE3wtueECOwHHXCveL4GF/YgKig5wUhUmbTVVXQ4u03UBDhP/Z+GL7uW24CLJUuKGanAbcNjTH1N6k09mud3F3k6GtlEcbp0psHeGsHW4kvZs1aKa9jgb2Ps1u9qBpop1PBanlU4jHYdJ1RSczeps4CRbu0z1HZzsQNNUJ4PKfzgD4D05H+3xoA0AAAAASUVORK5CYII="/>
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAATxJREFUSEvtldFxwjAQRB8VBCogJYQKAiVQAUkFoQPogFAB0AEdJKkgpAPoIOmA2Zkzo/EY62Sb6If7sbGFnnZvZfXIVL1MXO7gf3M+1eo+MANegCdb5QHYAjvg17vyFLBAmwBYZmgBr4Cu0fKCpfQbeLQZT8Cn3Y+Bod0fgZFHuRcsK2Wxag3MS5LegTd7JsvVitrygtW7B+ALkMKqkgPPpnbQBVigD5tIPZT6qpILK3sxCVpROdijWP0NE3wtueECOwHHXCveL4GF/YgKig5wUhUmbTVVXQ4u03UBDhP/Z+GL7uW24CLJUuKGanAbcNjTH1N6k09mud3F3k6GtlEcbp0psHeGsHW4kvZs1aKa9jgb2Ps1u9qBpop1PBanlU4jHYdJ1RSczeps4CRbu0z1HZzsQNNUJ4PKfzgD4D05H+3xoA0AAAAASUVORK5CYII="
+                />
                 <span class="link">Question Generation</span>
               </a>
             </li>
@@ -250,29 +253,44 @@
         </div>
       </div>
     </nav>
-    <section class="overlay">
-    </section>
+    <section class="overlay"></section>
     <div class="content">
-        <div>
-            <h2 class="content-heading">
-                Question Answering with Context
-            </h2>
-        </div>
-        <form id="form" class="content-form">
-<!--          <label for="text">Enter Text:</label>-->
-          <br>
-          <textarea id="text" name="text" class="content-para-input" placeholder="Enter Paragraph"></textarea>
-          <br>
-          <input id="question" name="question" type="text" class="content-question-input" placeholder="Question ">
-          <br>
-          <button type="submit" class="content-button">Submit</button>
-        </form>
-        <div id="answer"></div>
-        <div id="save" class="content-filesaver">
-          <label for="filename">Filename:</label>
-          <input id="filename" name="filename" type="text" class="content-filesaver-input">
-          <button id="save-button" disabled class="content-filesaver-button">Save</button>
-        </div>
+      <div>
+        <h2 class="content-heading">Question Answering with Context</h2>
+      </div>
+      <form id="form" class="content-form">
+        <!--          <label for="text">Enter Text:</label>-->
+        <br />
+        <textarea
+          id="text"
+          name="text"
+          class="content-para-input"
+          placeholder="Enter Paragraph"
+        ></textarea>
+        <br />
+        <input
+          id="question"
+          name="question"
+          type="text"
+          class="content-question-input"
+          placeholder="Question "
+        />
+        <br />
+        <button type="submit" class="content-button">Submit</button>
+      </form>
+      <div id="answer"></div>
+      <div id="save" class="content-filesaver">
+        <label for="filename">Filename:</label>
+        <input
+          id="filename"
+          name="filename"
+          type="text"
+          class="content-filesaver-input"
+        />
+        <button id="save-button" disabled class="content-filesaver-button">
+          Save
+        </button>
+      </div>
     </div>
     <div id="questions"></div>
     <script>
@@ -293,4 +311,3 @@
     <script src="{{ url_for('static', filename='app.js') }}"></script>
   </body>
 </html>
-
