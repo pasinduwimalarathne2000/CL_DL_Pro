@@ -6,17 +6,17 @@ app = Flask(__name__)
 model_name = "deepset/roberta-base-squad2"
 nlp = pipeline('question-answering', model=model_name, tokenizer=model_name)
 
-# tokenizer = AutoTokenizer.from_pretrained("valhalla/t5-base-e2e-qg")
+tokenizer = AutoTokenizer.from_pretrained("valhalla/t5-base-e2e-qg")
 model = AutoModelForSeq2SeqLM.from_pretrained("valhalla/t5-base-e2e-qg")
-# text2text_generator = pipeline("text2text-generation", model=model, tokenizer=tokenizer)
+text2text_generator = pipeline("text2text-generation", model=model, tokenizer=tokenizer)
 
 @app.route('/')
 def menu():
     return render_template('open.html')
 
-@app.route('/index')
-def index():
-    return render_template('index.html')
+@app.route('/answering')
+def answering():
+    return render_template('answering.html')
 
 @app.route('/login')
 def login():
@@ -33,8 +33,8 @@ def qgen():
 @app.route('/questions', methods=['POST'])
 def questions():
     text = request.form['text']
-    # question = text2text_generator(text, max_length=64, do_sample=False)
-    # return jsonify(str(question[0]['generated_text']))
+    question = text2text_generator(text, max_length=64, do_sample=False)
+    return jsonify(str(question[0]['generated_text']))
 
 @app.route('/answer', methods=['POST'])
 def answer():
