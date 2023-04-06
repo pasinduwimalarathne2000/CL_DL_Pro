@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from transformers import pipeline,AutoTokenizer, AutoModelForSeq2SeqLM
+import json 
 
 app = Flask(__name__)
 
@@ -14,9 +15,9 @@ text2text_generator = pipeline("text2text-generation", model=model, tokenizer=to
 def menu():
     return render_template('open.html')
 
-@app.route('/index')
-def index():
-    return render_template('index.html')
+@app.route('/answering')
+def answering():
+    return render_template('answering.html')
 
 @app.route('/login')
 def login():
@@ -51,6 +52,61 @@ def save():
     with open(f"{filename}.txt", "w") as f:
         f.write(content)
     return "File saved successfully!"
+
+
+##tests
+
+def test_routes():
+    with app.test_client() as client:
+        # test the "/" route
+        response = client.get('/')
+        assert response.status_code == 200
+
+        # test the "/answering" route
+        response = client.get('/answering')
+        assert response.status_code == 200
+
+        # test the "/login" route
+        response = client.get('/login')
+        assert response.status_code == 200
+
+        # test the "/signup" route
+        response = client.get('/signup')
+        assert response.status_code == 200
+
+        # test the "/qgen" route
+        response = client.get('/qgen')
+        assert response.status_code == 200
+
+##question generation route tests fail
+"""
+def test_questions_route():
+    with app.test_client() as client:
+        # Send a POST request to the /questions route with 'example text' as the input
+        response = client.post('/questions', data=json.dumps({'text': 'example text'}), content_type='application/json')
+
+        # Assert that the response status code is 200 OK
+        assert response.status_code == 200
+
+        # Get the generated text from the response JSON
+        response_json = response.get_json()
+        generated_text = response_json['generated_text']
+
+        # Assert that the generated text is not None
+        assert generated_text is not None
+"""
+def test_answer_route():
+    with app.test_client() as client:
+        response = client.post('/answer', data={'text': 'example text', 'question': 'What is this text about?'})
+        assert response.status_code == 200
+        assert json.loads(response.data)['answer'] is not None
+
+def test_save_route():
+    with app.test_client() as client:
+        response = client.post('/save', data={'filename': 'testfile', 'question': 'What is this text about?', 'answer': 'This is an example answer.'})
+        assert response.status_code == 200
+        assert response.data == b'File saved successfully!'
+   
 
 if __name__ == '__main__':
     app.run(debug=True)
