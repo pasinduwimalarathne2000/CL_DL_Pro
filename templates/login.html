@@ -185,7 +185,7 @@
 
 <body>
   <div id="header">
-    <img src="{{ url_for('static', filename='Logo.png') }}" alt="Logo" class="image-Logo">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="image-Logo">
     <h1>CaptureLearn</h1>
   </div>
   <div class="body">
@@ -243,27 +243,27 @@
   const database = getDatabase(app);
   const auth = getAuth();
 
-  signIn.addEventListener('click' , (e) =>{
+  signIn.addEventListener('click', (e) => {
     e.preventDefault();
 
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
 
     signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
-      alert('Welcome Back to CaptureLearn!');
-      window.location.href = "{{ url_for('answering') }}";
-      // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        alert('Welcome Back to CaptureLearn!');
+        window.location.href = "{{ url_for('answering') }}";
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
 
-      alert(errorMessage );
-      // ..
-    });
+        alert(errorMessage);
+        // ..
+      });
 
   })
 

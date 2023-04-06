@@ -182,7 +182,7 @@
 
 <body>
   <div id="header">
-    <img src="{{ url_for('static', filename='Logo.png') }}" alt="Logo" class="image-Logo">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="image-Logo">
     <h1>CaptureLearn</h1>
   </div>
   <div class="body">
@@ -243,7 +243,7 @@
   const database = getDatabase(app);
   const auth = getAuth();
 
-  signUp.addEventListener('click' , (e) =>{
+  signUp.addEventListener('click', (e) => {
 
     e.preventDefault();
 
@@ -283,7 +283,7 @@
         const errorCode = error.code;
         const errorMessage = error.message;
 
-        alert(errorMessage );
+        alert(errorMessage);
       });
   })
 </script>
